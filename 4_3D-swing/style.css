@@ -1,27 +1,55 @@
+:root {
+    --dark-color: rgb(125, 30, 13);
+    --medium-color: tomato;
+    --light-color: rgb(239, 157, 143);
+    --highlight: white;
+}
 .swing {
 }
 .seat {
     position: relative;
     width: 200px;
     height: 100px;
-    background-color: tomato;
-    transform: rotate3d(1, 0.8, 0.8, 295deg);
+    background-color: var(--medium-color);
+    transform: rotate3d(1, 0.6, 0.6, 295deg);
 }
+.seat_side--right {
+    position: absolute;
+    width: 200px;
+    height: 11px;
+    background-color: var(--light-color);
+    bottom: -11px;
+    left: -4.5px;
+    transform: skew(-40deg, 0deg);
+}
+
+.seat_side--left {
+    position: absolute;
+    width: 9px;
+    height: 100px;
+    background-color: var(--dark-color);
+    bottom: -6px;
+    left: -9px;
+    transform: skew(0deg, -50.5deg);
+}
+
 .hole {
     position: absolute;
     height: 10px;
     width: 20px;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--light-color);
 }
 
 .hole::after {
     content: "";
     display: block;
-    height: 10px;
-    width: 20px;
-    border-radius: 20% 20% 50% 40%;
-    background-color: blue;
+    position: absolute;
+    right: 1.5px;
+    height: 5px;
+    width: 11px;
+    border-radius: 100%;
+    background-color: var(--highlight);
 }
 
 .hole--1 {
